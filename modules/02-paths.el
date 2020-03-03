@@ -23,3 +23,9 @@
 ;;
 ;; ... whenever the path changes to ensure the path is available to
 ;; programs launched via Spotlight, the Dock, Finder, &c.
+
+;; Under OSX, emacs does not have $PATH available when running as windowed app.
+;; To remedy, this copies the full path over to emacs
+(require 'exec-path-from-shell)
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))

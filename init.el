@@ -19,7 +19,11 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (typescript-mode dired-details applescript-mode company-pollen pollen-mode edn gnuplot which-key org-babel-eval-in-repl htmlize ox-reveal ttl-mode sparql-mode yaml-mode visual-regexp undo-tree tuareg smex smartparens slime-company skewer-mode robe restclient rainbow-mode processing-mode pretty-symbols powerline parenface-plus paredit pallet motion-mode markdown-mode magit json-mode js2-refactor ido-ubiquitous haml-mode go-mode geiser fringe-helper flymake-ruby flymake-coffee find-file-in-project expand-region elisp-slime-nav diminish company-quickhelp company-inf-ruby company-ghc color-theme coffee-mode cider-eval-sexp-fu cider bundler aggressive-indent ag ack-and-a-half ace-jump-mode)))
+    (counsel-projectile exec-path-from-shell web-mode uuid typopunct simple-httpd ansi package-build shut-up epl git commander f dash s js2-mode ido-completing-read+ highlight git-commit flymake-cursor docker-tramp company-go company caml use-package typescript-mode dired-details applescript-mode company-pollen pollen-mode edn gnuplot which-key org-babel-eval-in-repl htmlize ox-reveal ttl-mode sparql-mode yaml-mode visual-regexp undo-tree tuareg smex smartparens slime-company skewer-mode robe restclient rainbow-mode processing-mode pretty-symbols powerline parenface-plus paredit pallet motion-mode markdown-mode magit json-mode js2-refactor ido-ubiquitous haml-mode go-mode geiser fringe-helper flymake-ruby flymake-coffee find-file-in-project expand-region elisp-slime-nav diminish company-quickhelp company-inf-ruby company-ghc color-theme coffee-mode cider-eval-sexp-fu cider bundler aggressive-indent ag ack-and-a-half ace-jump-mode projectile)))
+ '(safe-local-variable-values
+   (quote
+    ((cider-refresh-after-fn . "com.nextjournal.journal.repl/post-refresh")
+     (cider-refresh-before-fn . "com.nextjournal.journal.repl/pre-refresh"))))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
 

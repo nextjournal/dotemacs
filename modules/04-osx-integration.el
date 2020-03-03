@@ -8,7 +8,7 @@
 (setq mac-emulate-three-button-mouse t)
 
 ;; shift-select and delete-selection are standard is OS X inputs
-(setq shift-select-mode t) 
+(setq shift-select-mode t)
 (delete-selection-mode t)
 
 ;;;; Normalize key bindings with Mac OS X system ones
@@ -28,7 +28,7 @@
 ;; undo-tree-mode aliased to command+z/shift+command+z
 (require 'undo-tree)
 (global-undo-tree-mode 1)
-(global-set-key (kbd "s-z") 'undo)           
+(global-set-key (kbd "s-z") 'undo)
 (global-set-key (kbd "s-Z") 'undo-tree-redo)
 
 ;; the fantastic undo-tree-visualize on C-s-z
@@ -54,8 +54,20 @@
 (global-set-key (kbd "s-w") 'kill-this-buffer)
 
 ;; I never want to see the OS file finder
-(require 'find-file-in-project)
-(global-set-key (kbd "s-o") 'find-file-in-project)
+(global-set-key (kbd "s-o") 'find-file)
+
+;; Search in project with ag
+(require 'counsel-projectile)
+(global-set-key (kbd "s-F") 'counsel-projectile-ag)
+
+;; I never want to print the current buffer.
+;; I’d rather get a fuzzy-searchable list of function definitions
+(global-set-key (kbd "s-p") 'imenu)
+
+;; Fuzzy-find files in project as you type
+(require 'projectile)
+(global-set-key (kbd "s-t") 'projectile-find-file)
+(projectile-mode +1)
 
 ;; In dired, move deletions to trash
 (setq delete-by-moving-to-trash t)

@@ -95,7 +95,7 @@ Including indent-buffer, which should not be called automatically on save."
      (dolist (binding (list (kbd "M-<up>") (kbd "M-<down>") (kbd "C-M-<left>") (kbd "C-M-<right>")))
        (define-key paredit-mode-map binding nil))
 
-     ;; not just in lisp mode(s) 
+     ;; not just in lisp mode(s)
      (global-set-key (kbd "C-M-<left>") 'backward-sexp)
      (global-set-key (kbd "C-M-<right>") 'forward-sexp)
 
@@ -194,7 +194,9 @@ Including indent-buffer, which should not be called automatically on save."
      (setq cider-repl-use-clojure-font-lock t)
      (setq cider-repl-pop-to-buffer-on-connect nil)
      (setq nrepl-use-ssh-fallback-for-remote-hosts 't)
-     (setq cider-use-overlays nil)))
+     (setq cider-use-overlays nil)
+     (when (not (seq-some (lambda (entry) (eq 'nextjournal (first entry))) cider-cljs-repl-types))
+       (add-to-list 'cider-cljs-repl-types '(nextjournal "(do (require 'com.nextjournal.journal.repl) (com.nextjournal.journal.repl/wait-for-figwheel) (com.nextjournal.journal.repl/editor-repl))" nil)))))
 
 ;; I like this keybinding from Lighttable
 (eval-after-load 'clojure-mode
@@ -209,7 +211,7 @@ Including indent-buffer, which should not be called automatically on save."
 (require 'cider-eval-sexp-fu)
 (setq cider-eval-sexp-fu-flash-duration 0.2)
 
-;;;;;; HASKELL 
+;;;;;; HASKELL
 
 ;;;; Haskell
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
@@ -274,4 +276,3 @@ Including indent-buffer, which should not be called automatically on save."
 
 (require 'restclient)
 (define-key restclient-mode-map (kbd "<s-return>") 'restclient-http-send-current)
-
