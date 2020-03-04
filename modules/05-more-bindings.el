@@ -45,6 +45,10 @@
 (global-set-key [M-s-up]    'windmove-up)
 (global-set-key [M-s-down]  'windmove-down)
 
+;; moving between open buffers
+(global-set-key (kbd "C-s-<left>") 'previous-buffer)
+(global-set-key (kbd "C-s-<right>") 'next-buffer)
+
 ;; enhanced completion library, same as inputrc binding
 (global-set-key (kbd "M-/") 'hippie-expand)
 
