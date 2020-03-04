@@ -60,15 +60,6 @@
 (require 'counsel-projectile)
 (global-set-key (kbd "s-F") 'counsel-projectile-ag)
 
-;; I never want to print the current buffer.
-;; I’d rather get a fuzzy-searchable list of function definitions
-(global-set-key (kbd "s-p") 'imenu)
-
-;; Fuzzy-find files in project as you type
-(require 'projectile)
-(global-set-key (kbd "s-t") 'projectile-find-file)
-(projectile-mode +1)
-
 ;; In dired, move deletions to trash
 (setq delete-by-moving-to-trash t)
 
